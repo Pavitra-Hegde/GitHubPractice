@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
  
     @IBOutlet weak var button: UIButton!
+    var x:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         button.backgroundColor = UIColor.blue
@@ -34,6 +35,11 @@ class ViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         print("pavi")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
